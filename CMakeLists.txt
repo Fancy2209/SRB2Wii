@@ -1,3 +1,4 @@
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/ppu.cmake")
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 if("${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -61,7 +62,7 @@ option(
 	"Link dependencies using CMake's find_package and do not use internal builds"
 	${SRB2_CONFIG_SYSTEM_LIBRARIES_DEFAULT}
 )
-option(SRB2_CONFIG_ENABLE_TESTS "Build the test suite" ON)
+option(SRB2_CONFIG_ENABLE_TESTS "Build the test suite" OFF)
 # This option isn't recommended for distribution builds and probably won't work (yet).
 cmake_dependent_option(
 	SRB2_CONFIG_SHARED_INTERNAL_LIBRARIES
@@ -128,7 +129,7 @@ if(PPU)
 	find_package(ZLIB REQUIRED)
 	find_package(PNG REQUIRED)
 	find_package(SDL2 REQUIRED)
-	find_package(SDL2_mixer REQUIRED)
+	#find_package(SDL2_mixer REQUIRED)
 	find_package(CURL REQUIRED)
 endif()
 

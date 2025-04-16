@@ -406,9 +406,10 @@ static void I_ReportSignal(int num, int coredumped)
 	int buttonid;
 
 	SDL_ShowMessageBox(&messageboxdata, &buttonid);
-
+#ifndef _PS3
 	if (buttonid == 1)
 		SDL_OpenURL("https://www.srb2.org/discord");
+#endif
 }
 
 #ifndef NEWSIGNALHANDLER

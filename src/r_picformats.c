@@ -51,7 +51,7 @@
 #endif
 #endif
 
-static unsigned char imgbuf[1<<26];
+static unsigned char imgbuf[1<<15];
 
 #ifdef PICTURE_PNG_USELOOKUP
 static colorlookup_t png_colorlookup;
